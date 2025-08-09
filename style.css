@@ -13,12 +13,14 @@
     --neutral-gray-600: hsl(224, 23%, 55%);
     --neutral-blue-950: hsl(223, 47%, 23%);
 }
+
 body {
     width: 100%;
     min-height: 100vh;
     background: url(images/pattern-background-desktop.svg);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--neutral-blue-50);
 
     display: flex;
     align-items: center;
@@ -29,7 +31,6 @@ body {
     width: 100%;
     max-width: 350px;
     height: auto;
-    background-color: white;
     border-radius: 10px;
 }
 
@@ -40,6 +41,9 @@ body {
 }
 .card {
     padding: 30px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 h2 {
@@ -86,6 +90,11 @@ p {
     margin-right: 10px;
     font-weight: 700;
     font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.change-text a:hover {
+    text-decoration: none;
 }
 
 .button-cta {
@@ -116,13 +125,20 @@ p {
 .button-cancel a {
     font-weight: 700;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-cancel a:hover {
+    color: black;
 }
 
 @media (max-width: 500px) {
     body {
-        padding: 5%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background: url(images/pattern-background-mobile.svg);
+        padding: 0;
+        background-color: var(--neutral-blue-50);
+    }
+
+    .container {
+        margin: 0 20px;
     }
 }
